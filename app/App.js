@@ -25,7 +25,7 @@ const Tab = createBottomTabNavigator();
 const TabNavigator = () => (
   <Tab.Navigator
     tabBarOptions={{
-      activeBackgroundColor: "green",
+      activeBackgroundColor: "#15a11a",
       activeTintColor: "white",
       inactiveBackgroundColor: "#eee",
       inactiveTintColor: "black",
@@ -54,10 +54,12 @@ const TabNavigator = () => (
 
 function App(props) {
   return (
-    <NavigationContainer>
-      <TabNavigator />
-      <StatusBar style="auto" />
-    </NavigationContainer>
+    <React.Fragment>
+      <StatusBar hidden />
+      <NavigationContainer>
+        <TabNavigator />
+      </NavigationContainer>
+    </React.Fragment>
   );
 }
 
