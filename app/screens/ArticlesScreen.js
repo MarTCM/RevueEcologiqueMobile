@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
 
-import articleApi from "./api/articles";
+import articleApi from "../api/articles";
 
 class ArticlesScreen extends Component {
   state = {

@@ -5,7 +5,7 @@ function HomeScreen(props) {
   return (
     <View style={styles.mainContainer}>
       <ImageBackground
-        source={require("./assets/backround1.jpg")}
+        source={require("../assets/background.jpg")}
         style={styles.background}
       >
         <View style={styles.container}>

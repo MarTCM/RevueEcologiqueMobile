@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { WebView } from "react-native-webview";
-import { Base64 } from "./base64";
+import { Base64 } from "../utils/base64";
 
 class ArticleScreen extends Component {
   render() {
