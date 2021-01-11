@@ -1,11 +1,13 @@
 import React, { Component } from "react";
 import { Text, View, TouchableOpacity, StyleSheet } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
 
 import articleApi from "../api/articles";
 
 class ArticlesScreen extends Component {
   state = {
     articles: [],
+    sortedArticles: [],
     isLoading: false,
   };
   alertItemName = (item) => {
@@ -21,37 +23,47 @@ class ArticlesScreen extends Component {
         isLoading: false,
       });
     });
+
+    let sortedArticles = this.state.articles.sort(
+      (a, b) => Date.parse(new Date(a)) - Date.parse(new Date(b))
+    );
+
+    this.setState({
+      sortedArticles: sortedArticles.reverse(),
+    });
   };
 
   render() {
     return (
-      <View style={{ top: 20 }}>
-        <Text style={{ fontSize: 21, padding: 10, fontFamily: "serif" }}>
-          Affichage de {this.state.articles.length} articles.
-        </Text>
-        <View>
-          {this.state.articles.map((item, index) => (
-            <TouchableOpacity
-              key={item.id}
-              style={styles.container}
-              onPress={() =>
-                this.props.navigation.navigate("Article", { item: item })
-              }
-            >
-              <Text style={styles.text}>{item.titre}</Text>
-              <Text
-                style={{
-                  alignSelf: "flex-end",
-                  fontSize: 13,
-                  fontFamily: "sans-serif-light",
-                }}
+      <ScrollView>
+        <View style={{ top: 20, paddingBottom: 30 }}>
+          <Text style={{ fontSize: 23, padding: 10, fontFamily: "serif" }}>
+            Affichage de {this.state.articles.length} articles.
+          </Text>
+          <View>
+            {this.state.sortedArticles.map((item, index) => (
+              <TouchableOpacity
+                key={item.id}
+                style={styles.container}
+                onPress={() =>
+                  this.props.navigation.navigate("Article", { item: item })
+                }
               >
-                Par {item.auteur}
-              </Text>
-            </TouchableOpacity>
-          ))}
+                <Text style={styles.text}>{item.titre}</Text>
+                <Text
+                  style={{
+                    alignSelf: "flex-end",
+                    fontSize: 13,
+                    fontFamily: "sans-serif-light",
+                  }}
+                >
+                  Par {item.auteur}
+                </Text>
+              </TouchableOpacity>
+            ))}
+          </View>
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }
