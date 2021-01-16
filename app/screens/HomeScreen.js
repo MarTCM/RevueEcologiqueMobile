@@ -45,7 +45,7 @@ function HomeScreen(props) {
           style={{
             textAlign: "right",
             fontSize: 25,
-            fontFamily: "sans-serif-bold",
+            fontFamily: "sans-serif",
             paddingBottom: 5,
           }}
         >
