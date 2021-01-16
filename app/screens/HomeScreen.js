@@ -2,7 +2,7 @@ import React from "react";
 import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { ScrollView } from "react-native-gesture-handler";
 import MapView from "react-native-maps";
-import HomeSlideshow from "./HomeSlideshow";
+import HomeSlideshow from "../components/HomeSlideshow";
 
 function HomeScreen(props) {
   return (
