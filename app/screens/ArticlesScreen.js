@@ -10,9 +10,6 @@ class ArticlesScreen extends Component {
     sortedArticles: [],
     isLoading: false,
   };
-  alertItemName = (item) => {
-    alert(item.titre);
-  };
 
   componentDidMount = async () => {
     this.setState({ isLoading: true });
