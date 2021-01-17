@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { StyleSheet, Text, View } from "react-native";
 import Slideshow from "react-native-slideshow";
 import articleApi from "../api/articles";
 
@@ -41,9 +40,6 @@ class HomeSlideshow extends Component {
     this.setState({
       slideshowArticles: slideArts[0],
     });
-  };
-
-  componentWillMount() {
     this.setState({
       interval: setInterval(() => {
         this.setState({
@@ -54,7 +50,7 @@ class HomeSlideshow extends Component {
         });
       }, 3000),
     });
-  }
+  };
 
   componentWillUnmount() {
     clearInterval(this.state.interval);

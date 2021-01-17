@@ -40,7 +40,7 @@ class ArticlesScreen extends Component {
           <View>
             {this.state.sortedArticles.map((item, index) => (
               <TouchableOpacity
-                key={item.id}
+                key={index.valueOf(item.id)}
                 style={styles.container}
                 onPress={() =>
                   this.props.navigation.navigate("Article", { item: item })
