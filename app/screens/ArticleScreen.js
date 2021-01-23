@@ -27,7 +27,7 @@ class ArticleScreen extends Component {
         font-size: 10px;
       }
     `}
-        onSizeUpdated={(size) => console.log(size.height)}
+        //onSizeUpdated={(size) => console.log(size.height)}
         files={[
           {
             href: "cssfileaddress",
